@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>  
+	
+    <package name="test" extends="struts-default">
+        <action name="search" class="action.SearchAction" method="execute">
+        	<result name="success">/searchResult.jsp</result>
+        </action>
+        <action name="delete" class="action.DeleteAction" method="execute">
+        	<result name="success">/index.jsp</result>
+        </action>
+        <action name="select" class="action.SelectAction" method="execute">
+        	<result name="success">/selectResult.jsp</result>
+        </action>
+        <action name="selectAllBooks" class="action.SelectAllBooks" method="execute">
+        	<result name="success">/AllBooks.jsp</result>
+        </action>
+        <action name="selectAllAuthors" class="action.SelectAllAuthors" method="execute">
+        	<result name="success">/AllAuthors.jsp</result>
+        </action>
+        <action name="insertAuthor">
+        	<result>/insertAuthor.jsp</result>
+        </action>
+        <action name="insertBook">
+        	<result>/insertBook.jsp</result>
+        </action>
+        <action name="addAuthor" class="action.InsertAuthorAction" method="execute">
+        	<result>/index.jsp</result>
+        </action>
+        <action name="addBook" class="action.InsertBookAction" method="execute">
+        	<result name="success">/index.jsp</result>
+        	<result name="fail">/MustinsertAuthor.jsp</result>
+        		<param name="author">${author}</param>
+        </action>
+        <action name="home">
+        	<result>/index.jsp</result>
+        </action>
+    </package>
+</struts>
